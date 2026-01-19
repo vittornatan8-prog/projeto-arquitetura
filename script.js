@@ -74,15 +74,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // menu mobile
 function showSidebar() {
   const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.overlay');
   sidebar.style.display = 'block';
-  overlay.style.display = 'block';
 }
 function hideSidebar() {
   const sidebar = document.querySelector('.sidebar');
-  const overlay = document.querySelector('.overlay');
   sidebar.style.display = 'none';
-  overlay.style.display = 'none';
 }
 document.querySelector('.menu-toggle').addEventListener('click', showSidebar);
-document.querySelector('.overlay').addEventListener('click', hideSidebar);
+document.querySelector('.menu-close').addEventListener('click', hideSidebar);
+document.querySelector('.menu-closer').addEventListener('click', hideSidebar);
+
+
+
+

@@ -53,7 +53,6 @@ body {
 nav ul {
   list-style: none;
   display: flex;
-  align-items: center;
   gap: 30px;
 }
 
@@ -71,6 +70,10 @@ nav a:hover {
   color: #c6a76d;
 }
 .menu-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
   color: #f8f8f8;
@@ -106,9 +109,7 @@ nav a:hover {
   width: 100%;
   line-height: 2.2; 
 }
-.menu-button {
-  display: none;
-}
+
 @media (max-width: 800px) {
   .hideOnMobile {
     display: none;
@@ -116,13 +117,8 @@ nav a:hover {
   .menu-button {
     display: block;
   }
+  
 }
-@media (max-width: 400px) {
-  .sidebar {
-    width: 100%;
-  }
-}
-
 .hero {
   position: relative;
   background-image: url(img/arquitectureback.png);
