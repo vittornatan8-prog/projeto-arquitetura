@@ -73,17 +73,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 // menu mobile
 function showSidebar() {
-  const sidebar = document.querySelector('.sidebar');
-  sidebar.style.display = 'block';
+  document.querySelector('.sidebar').classList.add('active');
 }
 function hideSidebar() {
-  const sidebar = document.querySelector('.sidebar');
-  sidebar.style.display = 'none';
+  document.querySelector('.sidebar').classList.remove('active');
 }
-document.querySelector('.menu-toggle').addEventListener('click', showSidebar);
-document.querySelector('.menu-close').addEventListener('click', hideSidebar);
-document.querySelector('.menu-closer').addEventListener('click', hideSidebar);
 
+const menuButton = document.querySelector('.menu-button');
+menuButton.addEventListener('click', () => {
+  showSidebar();
+} );
+const menuCloser = document.querySelector('.menu-closer');
+menuCloser.addEventListener('click', () => {
+  hideSidebar();
+} );
+const sidebarLinks = document.querySelectorAll('.sidebar a');
+sidebarLinks.forEach(link => {
+  link.addEventListener('click', () => hideSidebar() );
+});
 
 
 

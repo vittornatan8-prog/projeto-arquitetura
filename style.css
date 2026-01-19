@@ -49,16 +49,28 @@ body {
   font-weight: 600;
   color: #f8f8f8;
 }
-
-nav ul {
-  list-style: none;
+.header nav {
+  flex: 1;
+}
+.header nav > ul:not(.sidebar) {
   display: flex;
-  gap: 30px;
+  justify-content: flex-end;
+  gap: 32px;
 }
 
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+}
+nav li {
+  height: 50px;
+}
 
 nav ul a {
-  margin-left: 20px;
   text-decoration: none;
   color: #f8f8f8;
   font-size: 0.85rem;
@@ -81,11 +93,22 @@ nav a:hover {
   cursor: pointer;
 }
 .menu-closer {
-  align-self: flex-end;
-  margin: 20px;
-  font-size: 1.5rem;
+  position: absolute;
+  top: 24px;  
+  right: 80px;
   cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.menu-closer i {
+  font-size: 26px;
   color: #f8f8f8;
+  transition: transform 0.3s ease;
 }
 .sidebar {
   position: fixed;
@@ -101,14 +124,22 @@ nav a:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  padding: 80px 48px;
 }
 .sidebar li {
   width: 100%;
 }
 .sidebar a {
   width: 100%;
-  line-height: 2.2; 
+  line-height: 2.2;
+  padding-left: 12px;
+  position: relative; 
+  gap: 14px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
 }
+
 
 @media (max-width: 800px) {
   .hideOnMobile {
@@ -116,6 +147,9 @@ nav a:hover {
   } 
   .menu-button {
     display: block;
+  }
+  .sidebar.active {
+    display: flex;
   }
   
 }
@@ -156,10 +190,10 @@ nav a:hover {
 
 .hero p {
   font-family: 'Inter', sans-serif;
-  margin-top: 16px;
+  margin-top: 24px;
   font-size: 1.15rem;
   letter-spacing: 0.8px;
-  max-width: 600px;
+  max-width: 800px;
   color: #c6a76d;
 }
 .reveal {
