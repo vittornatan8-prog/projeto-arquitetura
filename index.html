@@ -13,16 +13,30 @@
 
 <header class="header">
   <h1 class="logo">ARQ.</h1>
-  <nav class="nav">
-    <a href="#home">HOME</a>
-    <a href="#sobre">SOBRE</a>
-    <a href="#projetos">PROJETOS</a>
-    <a href="#contatos">CONTATO</a>
+  
+  <nav>
+    <ul class="sidebar">
+      <li class="menu-closer" onclick="hideSidebar()" class="menu-close">
+        <i class="ri-close-line"></i>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#sobre">SOBRE</a></li>
+      <li><a href="#projetos">PROJETOS</a></li>
+      <li><a href="#contatos">CONTATO</a></li>
+    </ul>
+    <ul>
+      <li class="hideOnMobile"><a href="#home">HOME</a></li>
+      <li class="hideOnMobile"><a href="#sobre">SOBRE</a></li>
+      <li class="hideOnMobile"><a href="#projetos">PROJETOS</a></li>
+      <li class="hideOnMobile"><a href="#contatos">CONTATO</a></li>
+      <li class="menu-button" onclick="showSidebar()" class="menu-toggle">
+        <i class="ri-menu-line"></i>
+        
+    </ul>
   </nav>
+    
 
-  <button class="menu-toggle" aria-label="Menu">
-    <i class="ri-menu-line"></i> 
-  </button>
+  <div class="overlay"></div>
+
 </header>
 
 <section class="hero" id="home">
@@ -99,7 +113,7 @@
 
     <!-- Marca -->
     <div class="footer-brand">
-      <h3>SeuNome<span>.</span></h3>
+      <h3>ARQ<span>.</span></h3>
       <p>
         Arquitetura & Urbanismo focados em soluções modernas,
         funcionais e sustentáveis.

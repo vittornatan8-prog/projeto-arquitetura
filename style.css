@@ -33,7 +33,7 @@ body {
   align-items: center;
   background: transparent;
   transition: transform 0.4s ease, background 0.3s ease;
-  z-index: 1000;
+  z-index: 1100;
 }
 
 .header.hide {
@@ -50,13 +50,15 @@ body {
   color: #f8f8f8;
 }
 
-nav {
+nav ul {
+  list-style: none;
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 30px;
 }
 
 
-nav a {
+nav ul a {
   margin-left: 20px;
   text-decoration: none;
   color: #f8f8f8;
@@ -68,51 +70,58 @@ nav a:hover {
   opacity: 1;
   color: #c6a76d;
 }
-.menu-toggle {
-  display: none;
+.menu-button {
   background: none;
   border: none;
-  cursor: pointer;
-  z-index: 1100;
-}
-.menu-toggle i {
-  font-size: 28px;
   color: #f8f8f8;
-  transition: color 0.3s ease;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
-@media (max-width: 768px) {
-
-  .menu-toggle {
+.menu-closer {
+  align-self: flex-end;
+  margin: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #f8f8f8;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(20, 20, 20, 0.8);
+  box-shadow: #2a2a2a 0px 0px 10px;
+  backdrop-filter: blur(10px);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sidebar li {
+  width: 100%;
+}
+.sidebar a {
+  width: 100%;
+  line-height: 2.2; 
+}
+.menu-button {
+  display: none;
+}
+@media (max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  } 
+  .menu-button {
     display: block;
   }
-
-  .nav {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
+}
+@media (max-width: 400px) {
+  .sidebar {
     width: 100%;
-    background: var(--bg-dark);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-
-  .nav.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .nav a {
-    font-size: 1.2rem;
-    letter-spacing: 3px;
   }
 }
-
 
 .hero {
   position: relative;
@@ -321,6 +330,7 @@ nav a:hover {
 
 .footer h3 {
   font-size: 1.8rem;
+  font-family: 'Playfair Display', serif ;
   margin-bottom: 16px;
 }
 
