@@ -87,10 +87,8 @@ const menuCloser = document.querySelector('.menu-closer');
 menuCloser.addEventListener('click', () => {
   hideSidebar();
 } );
+
 const sidebarLinks = document.querySelectorAll('.sidebar a');
 sidebarLinks.forEach(link => {
   link.addEventListener('click', () => hideSidebar() );
 });
-
-
-

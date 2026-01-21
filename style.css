@@ -27,7 +27,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,8 @@ body {
 }
 
 .header.scrolled {
-  background: transparent;
+  background:  rgba(20, 20, 20, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 .header .logo {
   font-family: 'Playfair Display', serif;
@@ -51,6 +52,7 @@ body {
 }
 .header nav {
   flex: 1;
+  margin-left: 40px;
 }
 .header nav > ul:not(.sidebar) {
   display: flex;
@@ -67,7 +69,10 @@ nav ul {
   gap: 32px;
 }
 nav li {
-  height: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+
 }
 
 nav ul a {
@@ -94,8 +99,8 @@ nav a:hover {
 }
 .menu-closer {
   position: absolute;
-  top: 24px;  
-  right: 80px;
+  top: 10px;  
+  right: 200px;
   cursor: pointer;
   width: 44px;
   height: 44px;
@@ -106,38 +111,63 @@ nav a:hover {
   transition: background-color 0.3s ease;
 }
 .menu-closer i {
-  font-size: 26px;
+  font-size: 30px;
   color: #f8f8f8;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease ;
+  
 }
 .sidebar {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -300px;
   height: 100vh;
   width: 250px;
   z-index: 999;
   background-color: rgba(20, 20, 20, 0.8);
   box-shadow: #2a2a2a 0px 0px 10px;
   backdrop-filter: blur(10px);
-  display: none;
+  
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 80px 48px;
+  padding: 100px 16px;
+}
+.sidebar.active {
+  right: 0;
+  display: flex;
+  transition: right 0.3s ease;
+}
+.sidebar li i {
+  font-size: 20px;
+  color: #C6A76D;
+  margin-right: 12px;
+  height: 30px;
 }
 .sidebar li {
-  width: 100%;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+.sidebar li + li {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 .sidebar a {
   width: 100%;
-  line-height: 2.2;
-  padding-left: 12px;
+  padding:  0;
   position: relative; 
-  gap: 14px;
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+  line-height: 1;
+  gap: 30px;
 }
 
 
@@ -306,24 +336,46 @@ nav a:hover {
 }
 
 .projects {
-  padding: 120px 8%;
+  padding: 100px 8%;
   max-width: 1200px;
   margin: 0 auto;
+  
+
 }
 .projects h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.4rem;
-  margin-bottom: 40px;
-  text-align: center;
+  margin-bottom: 50px;
   color: #1C1C1C;
 }
-.projects p {
+.projects p, br {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   line-height: 1.8;
   color: #444;
   margin-bottom: 16px;
-  text-align: center;
+}
+.project-overlay h3 {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #0c0c0c;
+  font-family: 'Playfair Display', serif;
+   
+}
+.project-overlay span {
+  color: #cfa25a; /* detalhe premium */
+
+}
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;  
+  width: 100%;
+  padding: 16px 2px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
 }
 
 .projects-grid {
@@ -371,7 +423,6 @@ nav a:hover {
 .footer h4 {
   font-size: 1.1rem;
   margin-bottom: 16px;
-  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -397,7 +448,7 @@ nav a:hover {
 }
 
 .footer-links a:hover {
-  color: #ffffff;
+  color: #cfa25a;
 }
 
 .footer-social {
@@ -503,7 +554,7 @@ nav a:hover {
   }
 
   .project-card img {
-    height: 280px;
+    height: 420px;
   }
 }
 @media (max-width: 768px) {
